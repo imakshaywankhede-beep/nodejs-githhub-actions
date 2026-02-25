@@ -20,11 +20,11 @@ jobs:
 
    - name: Build Docker Image
      run: |
-       docker build -t ak7999ks/nodejs-app:latest
+       docker build -t ak7999ks/nodejs-app:${{ github.sha }} .
 
    - name: Push Docker Image
      run: |
-       docker push ak7999ks/nodejs-app:latest
+       docker push ak7999ks/nodejs-app:${{ github.sha }} .
 
 
    - name: Deploy to Kubernetes
